@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<items xmlns:f="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers"
+       xmlns:s="http://typo3.org/ns/StephanSchuler/FluidStreamBuffer/ViewHelpers"
+>
+    <s:stream as="stream">
+        <!-- Everything inside `s:stream()` gets rendered but skipped from output -->
+        <f:for each="{items}" as="item">
+            <!-- Everything inside `s:stream.content()` gets pushed to the stream individually -->
+            <s:stream.content into="{stream}">
+                <item id="item-{item.id}">
+                    <name>{item.name}</name>
+                    <id>{item.id}</id>
+                    <f:for each="{item.attributes}" key="key" as="value">
+                        <attr name="{key}">{value}</attr>
+                    </f:for>
+                </item>
+            </s:stream.content>
+        </f:for>
+    </s:stream>
+</items>
