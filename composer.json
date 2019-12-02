@@ -1,0 +1,12 @@
+{
+  "name": "stephanschuler/fluid-stream-buffer",
+  "description": "PoC to render huge fluid templates with low memory footprint.",
+  "require": {
+    "typo3fluid/fluid": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "StephanSchuler\\FluidStreamBuffer\\": "src"
+    }
+  }
+}
