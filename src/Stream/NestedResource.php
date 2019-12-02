@@ -150,6 +150,14 @@ class NestedResource
     }
 
     /**
+     * @return resource
+     */
+    public static function createNewMemoryStream()
+    {
+        return fopen(self::MEMORY, 'w');
+    }
+
+    /**
      * @param resource $source
      * @return resource
      */
@@ -177,13 +185,5 @@ class NestedResource
             }
         }
         return null;
-    }
-
-    /**
-     * @return resource
-     */
-    private static function createNewMemoryStream()
-    {
-        return fopen(self::MEMORY, 'w');
     }
 }
